@@ -76,5 +76,3 @@ function game(){
         addhtml.insertAdjacentHTML("beforeend", finalresult);
     }
 }
-
-game();
