@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+</head>
 <script>
 
-let possiblePlays = ["Rock","Paper","Scissors"];
+var possiblePlays = ["Rock","Paper","Scissors"];
+var playerSelection;
 
-function computerPlay(possiblePlays){
-    return possiblePlays[Math.floor(Math.random()*possiblePlays.length)];
+
+function computerPlay(){ // Choose random play from the possible plays for the computer
+    let cpuPlay = (possiblePlays[Math.floor(Math.random()*possiblePlays.length)]);
+    return cpuPlay;
 }
 
 
-function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {  // plays a round of rock-paper-scissors given 2 player inputs (Player vs Computer)
+    playerSelection = playerSelection.substring(0,1).toUpperCase() + playerSelection.substring(1).toLowerCase(); // converts player selection to allow case sensitive words
     if (playerSelection == computerSelection) {
         return "It\'s a tie!";
     }
@@ -34,12 +42,32 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
-
-function caseInsensitive(play1, play2){
-    return play1.localeCompare(play2, 'en', { sensitivity: 'base' }) // Returns 0 if the string is comparable
+function game(){
+    var i;
+    let result;
+    let playerRounds = 0;
+    let cpuRounds = 0;
+    for ( i = 0; i < 5; i++) {
+        playerSelection = window.prompt("Insert your move here:");
+        result = playRound(playerSelection, computerPlay());
+        if (result.includes("win")){  //If outputted result has "win", add a round to the player and display result
+            playerRounds++;
+            console.log(result); 
+        } 
+        else if (result.includes("lose")){    //If outputted result has "lose", add a round to the cpu and display result
+            cpuRounds++;
+            console.log(result); 
+        }
+        else {   // If outputter result has "tie", add no rounds, just display
+            console.log(result); 
+        }
+    }
+    if (playerRounds > cpuRounds){
+        console.log("You win! " + playerRounds + " to " + cpuRounds)
+    }
+    playerRounds > cpuRounds ? console.log("You win! " + playerRounds + " to " + cpuRounds) : console.log("You lose! " + cpuRounds + " to " + playerRounds);
 }
 
-
-
+game();
 </script>
 </html>
