@@ -7,13 +7,14 @@
         <link rel="stylesheet" type="text/css" href="main.css">
     </head>
     <body>
-        <div class="container">
+        <div class="container" id="header">
             <p id="title">Rock Paper Scissors JS minigame</p>
-            <button onclick="game()">Restart Game</button>
+            <button id="restart">Restart Game</button>
         </div>
-        <div id="container">
-            <img id="userimg" src="images/rock.jpg">
-            <img id="cpuimg" src="images/rock.jpg">
+        <div>
+            <p id="finalresult"></p>
+            <img id="userimg" src="images/Rock.jpg">
+            <img id="cpuimg" src="images/Rock.jpg">
             <div style='clear:both;'></div>
             <br>
             <div class="container">
@@ -21,18 +22,18 @@
                 <button id="Paper">Paper</button>
                 <button id="Scissors">Scissors</button>
             </div>
-            <div class="container">
-                <div>
+            <div class="container" id="wrapper">
+                <div id="left">
                     <h3>USER Score</h3>
-                    <p id="USERscore"></p>
+                    <p id="USERscore">0</p>
                 </div>
-                <div>
+                <div id="right">
                     <h3>CPU Score</h3>
-                    <p id="CPUscore"></p>
+                    <p id="CPUscore">0</p>
                 </div>
             </div>
         </div>
-        <p id=game></p>
+        <p id=logs></p>
         <script src='rockpaperscissors.js'></script>
     </body>
 </html>
