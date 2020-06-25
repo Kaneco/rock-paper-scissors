@@ -4,10 +4,34 @@
         <title>Rock Paper Scissors</title>
         <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
         <meta content="utf-8" http-equiv="encoding">
+        <link rel="stylesheet" type="text/css" href="main.css">
     </head>
     <body>
-        <p style="font-size: large;">Rock Paper Scissors JS minigame (5 rounds)</p>
-        <button type="button" onclick="game()">Play Game</button>
+        <div class="container">
+            <p id="title">Rock Paper Scissors JS minigame</p>
+            <button onclick="game()">Restart Game</button>
+        </div>
+        <div id="container">
+            <img id="userimg" src="images/rock.jpg">
+            <img id="cpuimg" src="images/rock.jpg">
+            <div style='clear:both;'></div>
+            <br>
+            <div class="container">
+                <button id="Rock">Rock</button>
+                <button id="Paper">Paper</button>
+                <button id="Scissors">Scissors</button>
+            </div>
+            <div class="container">
+                <div>
+                    <h3>USER Score</h3>
+                    <p id="USERscore"></p>
+                </div>
+                <div>
+                    <h3>CPU Score</h3>
+                    <p id="CPUscore"></p>
+                </div>
+            </div>
+        </div>
         <p id=game></p>
         <script src='rockpaperscissors.js'></script>
     </body>

@@ -2,6 +2,11 @@ var possiblePlays = ["Rock","Paper","Scissors"];
 var playerSelection; //Stores the player Selection
 let finalresult;  //Stores the winner and final result
 let addhtml = document.getElementById("game");
+let images = [ 'images/rock.jpg','images/paper.jpg','images/scissors.jpg'];
+
+
+const buttons = document.querySelectorAll('button');
+
 
 
 function computerPlay(){ // Return a random play from the possible plays for the computer
@@ -9,19 +14,41 @@ function computerPlay(){ // Return a random play from the possible plays for the
     return cpuPlay;
 }
 
+function simulatePlaying(playerSelection, computerSelection){
+        let userImg = document.querySelector("#userimg");
+        userImg.setAttribute('src', images[0]);
+        userImg.classList.add("playing");
+        setTimeout(function(){     
+            userImg.classList.remove("playing");
+        }, 300);
+        userImg.setAttribute('src', images[1]);
+        userImg.classList.add("playing");
+        setTimeout(function(){         
+            userImg.classList.remove("playing");
+        }, 300);
+        userImg.setAttribute('src', images[2]);
+        userImg.classList.add("playing");
+    }
+
 
 function playRound(playerSelection, computerSelection) {  // plays a round of rock-paper-scissors given 2 player inputs (Player vs Computer), returns the result
     playerSelection = playerSelection.substring(0,1).toUpperCase() + playerSelection.substring(1).toLowerCase(); // converts player selection to allow case sensitive words
+    let userScore = document.querySelector("#USERscore");
+    let cpuScore = document.querySelector("#CPUscore");
     if (playerSelection == computerSelection) {
+
         return "It\'s a tie!";
     }
     else if (playerSelection == "Paper" && computerSelection == "Rock") {
+        userScore.innerText= 1;
         return "You win! Paper beats Rock!";
     }
     else if (playerSelection == "Scissors" && computerSelection == "Rock") {
+        userScore.innerText= 1;
         return "You lose! Rock beats Scissors!";
     }
     else if (playerSelection == "Rock" && computerSelection == "Paper") {
+        userScore.innerText= 1;
         return "You lose! Paper beats Rock!";
     }
     else if (playerSelection == "Scissors" && computerSelection == "Paper") {
@@ -76,3 +103,16 @@ function game(){
         addhtml.insertAdjacentHTML("beforeend", finalresult);
     }
 }
+
+function changeimage(image){
+    userImg.classList.remove("playing");
+
+}
+
+// we use the .forEach method to iterate through each button
+buttons.forEach((button) => {
+    // and for each one we add a 'click' listener
+    button.addEventListener('click', (e) => {
+        playRound(button.id, computerPlay());
+    });
+  });
