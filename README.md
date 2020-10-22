@@ -4,8 +4,6 @@ Rock Paper Scissors minigame made using Javascript
 
 Plays 5 rounds of rock-paper-scissors against the CPU using javascript
 
-**Total project time:** 17h
-
 ## Live Demo
 Here is the live demo: https://kaneco.github.io/rock-paper-scissors/
 ## Preview
