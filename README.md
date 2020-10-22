@@ -1,6 +1,19 @@
-# rock-paper-scissors
-TheOdinProject rock-paper-scissors game
+# Rock Paper Scissors
 
-https://www.theodinproject.com/courses/web-development-101/lessons/rock-paper-scissors
+Rock Paper Scissors minigame made using Javascript
 
-- Plays 5 rounds of rock-paper-scissors against the CPU using javascript
+Plays 5 rounds of rock-paper-scissors against the CPU using javascript
+
+**Total project time:** 17h
+
+## Live Demo
+Here is the live demo: https://kaneco.github.io/rock-paper-scissors/
+## Preview
+![enter image description here](https://i.imgur.com/KsMu82v.jpg)
+
+## Source
+
+[The Odin Project Curriculum](https://www.theodinproject.com/courses/web-development-101/lessons/rock-paper-scissors)
+
+## License
+This project is licensed under the terms of the **[MIT](https://choosealicense.com/licenses/mit/)**  license. 
